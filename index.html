@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ryham's Currency Converter</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="converter-container">
+        <h1>Know the Worth Now!!! 
+            <span>Unlock the Power of Currency Conversion</span>
+        </h1>
+        <form>
+            <input type="number" id="amount" placeholder="Enter amount" required>
+            <select id="fromCurrency">
+                <option value="USD">USD</option>
+                <option value="EUR">EUR</option>
+                <option value="GBP">GBP</option>
+                <option value="BTC">BTC</option>
+                <option value="ETH">ETH</option>
+            </select>
+            <select id="toCurrency">
+                <option value="USD">USD</option>
+                <option value="EUR">EUR</option>
+                <option value="GBP">GBP</option>
+                <option value="BTC">BTC</option>
+                <option value="ETH">ETH</option>
+            </select>
+            <button id="convert-btn">Convert</button>
+        </form>
+        <div id="result"></div>
+        <div id="historical-data">
+            <h2>Historical Data</h2>
+            <!-- LineChart component will be rendered here -->
+        </div>
+        <div class="flags">
+            <img src="./all.img/flag 1.png" alt="USA Flag">
+            <img src="./all.img/flag 2.png" alt="Nigeria Flag">
+            <img src="./all.img/flag 3.png" alt="Russia Flag">
+            <img src="./all.img/flag 4.png" alt="India Flag">
+            <!-- Add more flags as needed -->
+        </div>
+    </div>
+	
+    <script>
+      
+
+// Define a local conversion rates object
+const conversionRates = {
+  USD: 1,
+  EUR: 0.88,
+  GBP: 0.76,
+  BTC: 0.00024,
+  ETH: 0.0021,
+  // Add more currencies as needed
+};
+
+// Function to convert currency
+function convertCurrency(amount, fromCurrency, toCurrency) {
+  const exchangeRate = conversionRates[toCurrency] / conversionRates[fromCurrency];
+  const result = amount * exchangeRate;
+  return result;
+}
+
+// Function to handle the conversion
+function handleConversion() {
+  const amountInput = document.getElementById('amount');
+  const fromCurrencySelect = document.getElementById('fromCurrency');
+  const toCurrencySelect = document.getElementById('toCurrency');
+  const resultDiv = document.getElementById('result');
+
+  const amount = parseFloat(amountInput.value);
+  const fromCurrency = fromCurrencySelect.value;
+  const toCurrency = toCurrencySelect.value;
+
+  // Validate amount input
+  if (isNaN(amount)) {
+    alert('Please enter a valid amount');
+    return;
+  }
+
+  const result = convertCurrency(amount, fromCurrency, toCurrency);
+  resultDiv.innerHTML = `${amount} ${fromCurrency} = ${result} ${toCurrency}`;
+}
+
+// Add event listener to the convert button
+document.getElementById('convert-btn').addEventListener('click', handleConversion);
+
+// Add event listener to the form
+document.querySelector('form').addEventListener('submit', (event) => {
+  event.preventDefault(); // Prevent default form submission behavior
+  handleConversion(); // Call the handleConversion function
+});
+
+// Add event listener to the convert button
+document.getElementById('convert-btn').addEventListener('click', handleConversion);
+
+    </script>
+</body>
+</html>

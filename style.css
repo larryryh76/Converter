@@ -1,0 +1,149 @@
+body ::before {
+  content: "";
+    font-family: 'Poppins', sans-serif;
+    background-color: #f9f9f9;
+    transition: all 0.3s ease-in-out;
+    background-image: url('./all.img/investment-5241253_1280.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  filter: blur(4px);
+  z-index: -1;
+    
+  }
+  
+  .converter-container {
+    max-width: 500px;
+    margin: 40px auto;
+    padding: 30px;
+    border: 1px solid #ddd;
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    background-color: #fff;
+    transition: all 0.3s ease-in-out;
+    margin-top: 100px;
+  }
+  
+  .converter-container:hover {
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
+  }
+  .flags {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: left;
+    margin-top: 20px;
+  }
+  
+  .flags img {
+    width: 30px;
+    height: 20px;
+    margin: 5px;
+    border-radius: 5px;
+  }
+  h1 {
+    font-size: 36px;
+    font-weight: bold;
+    color: #333;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  h1 span {
+    font-size: 24px;
+    font-weight: normal;
+    color: #666;
+    display: block;
+    margin-top: 10px;
+  }
+  
+  h1::after {
+    content: "";
+    display: block;
+    width: 100px;
+    height: 2px;
+    background-color: #4CAF50;
+    margin: 20px auto;
+  }
+  
+  form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  input[type="number"] {
+    width: 100%;
+    height: 50px;
+    margin-bottom: 25px;
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    font-size: 18px;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  input[type="number"]:focus {
+    border-color: #4CAF50;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  select {
+    width: 100%;
+    height: 50px;
+    margin-bottom: 25px;
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    font-size: 18px;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  select:focus {
+    border-color: #4CAF50;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  #convert-btn {
+    background-color: #4CAF50;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+  }
+  
+  #convert-btn:hover {
+    background-color: #3e8e41;
+  }
+  
+  #convert-btn:active {
+    background-color: #2e6c31;
+  }
+  
+  #result {
+    margin-top: 30px;
+    text-align: center;
+    font-size: 24px;
+    color: #010600;
+    font-weight: bold;
+  }
+  
+  #historical-data {
+    margin-top: 50px;
+  }
+  
+  .LineChart {
+    width: 400px;
+    height: 200px;
+    margin: 0 auto;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
